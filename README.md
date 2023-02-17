@@ -1,2 +1,2 @@
-# SignPost
-A simple app to add spatially anchored virtual sign posts
+# Azure Samples
+Samples to get stuff done on azure
