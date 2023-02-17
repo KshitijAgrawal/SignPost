@@ -1,0 +1,52 @@
+{
+    "properties": {
+        "source": {
+            "exactVersion": "19044.2364.221205",
+            "offer": "Windows-10",
+            "publisher": "MicrosoftWindowsDesktop",
+            "sku": "win10-21h2-pro",
+            "type": "PlatformImage",
+            "version": "latest"
+        },
+        "customize": [
+            {
+                "inline": [
+                    "Write-Output before",
+                    "Start-Sleep -Seconds 660",
+                    "Write-Output after"
+                ],
+                "name": "powershellcommandCustomization0",
+                "runAsSystem": false,
+                "runElevated": true,
+                "type": "PowerShell"
+            }
+        ],
+        "distribute": [
+            {
+                "artifactTags": {},
+                "runOutputName": "<>",
+                "type": "VHD"
+            }
+        ],
+        "buildTimeoutInMinutes": 0,
+        "vmProfile": {
+            "vmSize": "Standard_DS1_v2",
+            "osDiskSizeGB": 128,
+            "vnetConfig": {
+                "subnetId": "/subscriptions/<>/resourceGroups/<>/providers/Microsoft.Network/virtualNetworks/<>/subnets/<>",
+                "proxyVmSize": ""
+            }
+        },
+      },
+    "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "/subscriptions/<>/resourcegroups/<>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<>": {
+            }
+        }
+    },
+    "tags": {},
+    "location": "westcentralus",
+    "name": "VnetImageTestTimeout12",
+    "type": "Microsoft.VirtualMachineImages/imageTemplates"
+}
