@@ -1,0 +1,48 @@
+{
+    "properties": {
+        "source": {
+            "exactVersion": "20348.1547.230207",
+            "offer": "WindowsServer",
+            "publisher": "MicrosoftWindowsServer",
+            "sku": "2022-datacenter",
+            "type": "PlatformImage",
+            "version": "latest"
+        },
+        "customize": [
+            {
+                "name": "powershellscriptCustomization0",
+                "runAsSystem": true,
+                "runElevated": true,
+                "scriptUri": "https://raw.githubusercontent.com/KshitijAgrawal/SignPost/master/install-net.ps1",
+                "sha256Checksum": "b7bc6ac4b56756c27b33ba1abda07d34c8edddac058ce9689f5147a3d322bf7e",
+                "type": "PowerShell"
+            }
+        ],
+        "distribute": [
+            {
+                "artifactTags": {},
+                "imageId": "<>",
+                "location": "eastus2",
+                "runOutputName": "runOutputManagedImage",
+                "type": "ManagedImage"
+            }
+        ],
+        "vmProfile": {
+            "vmSize": "Standard_DS1_v2",
+            "osDiskSizeGB": 128
+        },
+    },
+    "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+            "<managed identity>": {
+                "principalId": "p",
+                "clientId": "c"
+            }
+        }
+    },
+    "tags": {},
+    "location": "eastus2",
+    "name": "dotnte7",
+    "type": "Microsoft.VirtualMachineImages/imageTemplates"
+}
